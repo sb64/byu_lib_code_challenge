@@ -26,8 +26,8 @@ pub fn max(i1: i32, i2: i32, i3: i32) -> i32 {
 }
 
 pub fn factorial(n: i32) -> i32 {
-    if n == 2 {
-        return 2;
+    if n <= 1 {
+        return 1;
     }
 
     n * factorial(n - 1)
@@ -74,6 +74,9 @@ mod tests {
 
     #[test]
     fn factorial_works() {
+        assert_eq!(factorial(0), 1);
+        assert_eq!(factorial(1), 1);
+        assert_eq!(factorial(2), 2);
         assert_eq!(factorial(3), 6);
         assert_eq!(factorial(8), 40320);
     }
